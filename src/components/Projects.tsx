@@ -6,7 +6,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, Globe, Layers, Palette, Code } from "lucide-react";
 
 const Projects = () => {
   return (
@@ -39,17 +39,45 @@ const Projects = () => {
                     rel="noopener noreferrer"
                     className="group block"
                   >
-                    <div className="flex flex-col rounded-md aspect-video bg-muted items-center justify-center p-6 transition-colors hover:bg-muted/80">
-                      <span className="text-xs uppercase tracking-widest text-muted-foreground mb-2">
-                        Web Design
-                      </span>
-                      <h3 className="text-xl font-medium mb-2">Ramos Agency</h3>
-                      <p className="text-sm text-muted-foreground text-center max-w-xs mb-4">
+                    <div className="flex flex-col rounded-md aspect-video bg-muted items-center justify-center p-6 transition-all hover:bg-foreground hover:text-background border border-border hover:border-foreground">
+                      {/* Header com ícone e categoria */}
+                      <div className="flex items-center gap-2 mb-3">
+                        <Globe className="w-4 h-4 text-muted-foreground group-hover:text-gray-400" />
+                        <span className="text-xs uppercase tracking-widest text-muted-foreground group-hover:text-gray-400">
+                          Web Design
+                        </span>
+                      </div>
+                      
+                      {/* Título */}
+                      <h3 className="text-xl font-medium mb-2 group-hover:text-background">
+                        Ramos Agency
+                      </h3>
+                      
+                      {/* Descrição */}
+                      <p className="text-sm text-muted-foreground text-center max-w-xs mb-4 group-hover:text-gray-400">
                         Site desenvolvido para uma agência de assessoria e consultoria para médicos high ticket.
                       </p>
-                      <div className="flex items-center gap-2 text-sm text-muted-foreground group-hover:text-foreground transition-colors">
+                      
+                      {/* Tech Badges */}
+                      <div className="flex flex-wrap gap-2 justify-center mb-4">
+                        <div className="flex items-center gap-1 px-2 py-1 rounded-full bg-background/10 border border-border group-hover:border-gray-600 group-hover:bg-background/5">
+                          <Code className="w-3 h-3" />
+                          <span className="text-xs">React</span>
+                        </div>
+                        <div className="flex items-center gap-1 px-2 py-1 rounded-full bg-background/10 border border-border group-hover:border-gray-600 group-hover:bg-background/5">
+                          <Palette className="w-3 h-3" />
+                          <span className="text-xs">Tailwind</span>
+                        </div>
+                        <div className="flex items-center gap-1 px-2 py-1 rounded-full bg-background/10 border border-border group-hover:border-gray-600 group-hover:bg-background/5">
+                          <Layers className="w-3 h-3" />
+                          <span className="text-xs">Vercel</span>
+                        </div>
+                      </div>
+                      
+                      {/* CTA */}
+                      <div className="flex items-center gap-2 text-sm text-muted-foreground group-hover:text-background transition-colors">
                         <span>Ver projeto</span>
-                        <ArrowUpRight className="w-4 h-4" />
+                        <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                       </div>
                     </div>
                   </a>
@@ -57,9 +85,15 @@ const Projects = () => {
 
                 {/* Placeholder para mais projetos */}
                 <CarouselItem>
-                  <div className="flex rounded-md aspect-video bg-muted items-center justify-center p-6 border-2 border-dashed border-border">
-                    <span className="text-sm text-muted-foreground">
+                  <div className="flex flex-col rounded-md aspect-video bg-muted items-center justify-center p-6 border-2 border-dashed border-border">
+                    <div className="w-12 h-12 rounded-full bg-border/50 flex items-center justify-center mb-4">
+                      <Layers className="w-5 h-5 text-muted-foreground" />
+                    </div>
+                    <span className="text-sm text-muted-foreground mb-1">
                       Mais projetos em breve...
+                    </span>
+                    <span className="text-xs text-muted-foreground/60">
+                      Novos trabalhos sendo desenvolvidos
                     </span>
                   </div>
                 </CarouselItem>
