@@ -2,11 +2,13 @@ import { useState, useEffect } from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import { cn } from "@/lib/utils";
 
 const Header = () => {
   const { t } = useLanguage();
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState<string>("");
 
   useEffect(() => {
     const handleScroll = () => {
@@ -25,6 +27,29 @@ const Header = () => {
     };
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  // Track active section with Intersection Observer
+  useEffect(() => {
+    const sections = ["sobre", "projetos", "contato"];
+    
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveSection(`#${entry.target.id}`);
+          }
+        });
+      },
+      { rootMargin: "-50% 0px -50% 0px" }
+    );
+
+    sections.forEach((sectionId) => {
+      const element = document.getElementById(sectionId);
+      if (element) observer.observe(element);
+    });
+
+    return () => observer.disconnect();
   }, []);
 
   const navItems = [
@@ -60,9 +85,21 @@ const Header = () => {
                 <a
                   key={item.label}
                   href={item.href}
-                  className="text-sm text-muted-foreground hover:text-foreground transition-colors duration-300 tracking-wide"
+                  className={cn(
+                    "relative text-sm transition-colors duration-300 tracking-wide",
+                    activeSection === item.href
+                      ? "text-foreground"
+                      : "text-muted-foreground hover:text-foreground"
+                  )}
                 >
                   {item.label}
+                  {activeSection === item.href && (
+                    <motion.span
+                      layoutId="activeSection"
+                      className="absolute -bottom-1 left-0 right-0 h-px bg-foreground"
+                      transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                    />
+                  )}
                 </a>
               ))}
             </nav>
@@ -107,9 +144,21 @@ const Header = () => {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.1 + index * 0.1 }}
-                  className="text-2xl font-light text-foreground hover:text-muted-foreground transition-colors duration-300 tracking-wide"
+                  className={cn(
+                    "relative text-2xl font-light transition-colors duration-300 tracking-wide",
+                    activeSection === item.href
+                      ? "text-foreground"
+                      : "text-muted-foreground hover:text-foreground"
+                  )}
                 >
                   {item.label}
+                  {activeSection === item.href && (
+                    <motion.span
+                      layoutId="activeSectionMobile"
+                      className="absolute -bottom-1 left-0 right-0 h-px bg-foreground"
+                      transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                    />
+                  )}
                 </motion.a>
               ))}
             </motion.nav>
