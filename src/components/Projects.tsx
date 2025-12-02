@@ -14,8 +14,8 @@ const Projects = () => {
   const { t } = useLanguage();
 
   return (
-    <div id="projetos" className="w-full py-16 sm:py-20 lg:py-40">
-      <div className="container mx-auto px-4 sm:px-6">
+    <div id="projetos" className="w-full py-16 sm:py-20 lg:py-40 overflow-hidden">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-16">
         <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap-8 lg:gap-10">
           <div className="flex gap-3 sm:gap-4 flex-col items-center lg:items-start text-center lg:text-left">
             <div>
