@@ -10,7 +10,7 @@ const About = () => {
             <span className="text-xs uppercase tracking-[0.2em] text-muted-foreground font-medium">
               Sobre mim
             </span>
-            <div className="aspect-[3/4] w-full overflow-hidden">
+            <div className="aspect-[9/16] w-full overflow-hidden">
               <img
                 src={murilloPhoto}
                 alt="Murillo Alves"
