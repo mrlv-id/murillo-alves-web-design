@@ -1,11 +1,14 @@
 import { Mail, Twitter } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Contact = () => {
+  const { t } = useLanguage();
+
   const contactMethods = [
     {
       icon: <Mail className="w-6 h-6" />,
-      title: "Email",
-      desc: "Entre em contato diretamente para discutir seu projeto.",
+      title: t("contact.email.title"),
+      desc: t("contact.email.desc"),
       link: {
         name: "mlvs.dev@gmail.com",
         href: "mailto:mlvs.dev@gmail.com",
@@ -13,10 +16,10 @@ const Contact = () => {
     },
     {
       icon: <Twitter className="w-6 h-6" />,
-      title: "Twitter",
-      desc: "Acompanhe meu trabalho e novidades.",
+      title: t("contact.twitter.title"),
+      desc: t("contact.twitter.desc"),
       link: {
-        name: "Ver perfil",
+        name: t("contact.twitter.link"),
         href: "https://twitter.com/murilloalves",
       },
     },
@@ -27,14 +30,13 @@ const Contact = () => {
       <div className="max-w-6xl mx-auto px-6 lg:px-8 gap-12 lg:flex">
         <div className="max-w-md">
           <span className="text-xs uppercase tracking-[0.2em] text-muted-foreground font-medium">
-            Contato
+            {t("contact.label")}
           </span>
           <h3 className="mt-4 text-foreground text-3xl font-medium sm:text-4xl tracking-tight">
-            Vamos conversar
+            {t("contact.title")}
           </h3>
           <p className="mt-4 text-muted-foreground leading-relaxed">
-            Interessado em trabalhar juntos? Entre em contato e vamos
-            transformar suas ideias em realidade.
+            {t("contact.description")}
           </p>
         </div>
         <div className="flex-1">

@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Header = () => {
+  const { t } = useLanguage();
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
@@ -12,9 +14,9 @@ const Header = () => {
   }, []);
 
   const navItems = [
-    { label: "Sobre", href: "#sobre" },
-    { label: "Projetos", href: "#projetos" },
-    { label: "Contato", href: "#contato" },
+    { label: t("nav.about"), href: "#sobre" },
+    { label: t("nav.projects"), href: "#projetos" },
+    { label: t("nav.contact"), href: "#contato" },
   ];
 
   return (

@@ -8,24 +8,25 @@ import {
 } from "@/components/ui/carousel";
 import { ArrowUpRight, Globe, Layers, Palette, Code } from "lucide-react";
 import ramosAgencyPreview from "@/assets/projects/ramos-agency-preview.png";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Projects = () => {
+  const { t } = useLanguage();
+
   return (
     <div id="projetos" className="w-full py-20 lg:py-40">
       <div className="container mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 justify-end items-end gap-10">
           <div className="flex gap-4 flex-col items-start">
             <div>
-              <Badge>Projetos</Badge>
+              <Badge>{t("projects.badge")}</Badge>
             </div>
             <div className="flex gap-2 flex-col">
               <h2 className="text-xl md:text-3xl lg:text-5xl tracking-tighter lg:max-w-xl font-regular text-left">
-                Uma seleção de trabalhos recentes
+                {t("projects.title")}
               </h2>
               <p className="text-lg max-w-xl lg:max-w-sm leading-relaxed tracking-tight text-muted-foreground text-left">
-                Projetos desenvolvidos com foco em design minimalista, 
-                experiência do usuário e performance. Cada trabalho representa 
-                um compromisso com a excelência visual e funcional.
+                {t("projects.description")}
               </p>
             </div>
           </div>
@@ -57,7 +58,7 @@ const Projects = () => {
                         <div className="flex items-center gap-2 mb-3">
                           <Globe className="w-4 h-4 text-white" />
                           <span className="text-xs uppercase tracking-widest text-white font-medium">
-                            Web Design
+                            {t("projects.ramos.category")}
                           </span>
                         </div>
                         
@@ -68,7 +69,7 @@ const Projects = () => {
                         
                         {/* Descrição */}
                         <p className="text-sm text-white/90 text-center max-w-xs mb-4 drop-shadow-md">
-                          Site desenvolvido para uma agência de assessoria e consultoria para médicos high ticket.
+                          {t("projects.ramos.description")}
                         </p>
                         
                         {/* Tech Badges */}
@@ -89,7 +90,7 @@ const Projects = () => {
                         
                         {/* CTA */}
                         <div className="flex items-center gap-2 text-sm text-white font-medium">
-                          <span>Ver projeto</span>
+                          <span>{t("projects.ramos.cta")}</span>
                           <ArrowUpRight className="w-4 h-4" />
                         </div>
                       </div>
@@ -104,10 +105,10 @@ const Projects = () => {
                       <Layers className="w-5 h-5 text-muted-foreground" />
                     </div>
                     <span className="text-sm text-muted-foreground mb-1">
-                      Mais projetos em breve...
+                      {t("projects.coming")}
                     </span>
                     <span className="text-xs text-muted-foreground/60">
-                      Novos trabalhos sendo desenvolvidos
+                      {t("projects.developing")}
                     </span>
                   </div>
                 </CarouselItem>
