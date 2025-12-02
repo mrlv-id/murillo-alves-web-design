@@ -26,45 +26,45 @@ const Contact = () => {
   ];
 
   return (
-    <section id="contato" className="py-32 bg-secondary/30">
-      <div className="max-w-6xl mx-auto px-6 lg:px-8 gap-12 lg:flex">
-        <div className="max-w-md">
+    <section id="contato" className="py-20 sm:py-24 md:py-32 bg-secondary/30">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 gap-8 sm:gap-12 flex flex-col lg:flex-row">
+        <div className="max-w-md text-center lg:text-left mx-auto lg:mx-0">
           <span className="text-xs uppercase tracking-[0.2em] text-muted-foreground font-medium">
             {t("contact.label")}
           </span>
-          <h3 className="mt-4 text-foreground text-3xl font-medium sm:text-4xl tracking-tight">
+          <h3 className="mt-3 sm:mt-4 text-foreground text-2xl sm:text-3xl md:text-4xl font-medium tracking-tight">
             {t("contact.title")}
           </h3>
-          <p className="mt-4 text-muted-foreground leading-relaxed">
+          <p className="mt-3 sm:mt-4 text-muted-foreground leading-relaxed text-sm sm:text-base">
             {t("contact.description")}
           </p>
         </div>
         <div className="flex-1">
-          <ul className="mt-12 gap-y-6 gap-x-12 items-start md:flex lg:gap-x-0 lg:mt-0">
+          <ul className="mt-8 lg:mt-0 gap-y-6 gap-x-8 lg:gap-x-12 grid grid-cols-1 sm:grid-cols-2 lg:flex lg:gap-x-0">
             {contactMethods.map((item, idx) => (
               <li
                 key={idx}
-                className="space-y-3 border-t border-border py-6 md:max-w-sm md:py-0 md:border-t-0 lg:border-l lg:px-12 lg:max-w-none first:lg:border-l-0 first:lg:pl-0"
+                className="space-y-3 py-6 sm:py-0 border-t sm:border-t-0 lg:border-l border-border lg:px-8 xl:px-12 first:border-t-0 first:lg:border-l-0 first:lg:pl-0 flex flex-col items-center sm:items-start"
               >
-                <div className="w-12 h-12 rounded-full border border-border flex items-center justify-center text-foreground">
+                <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full border border-border flex items-center justify-center text-foreground">
                   {item.icon}
                 </div>
-                <h4 className="text-foreground text-lg font-medium">
+                <h4 className="text-foreground text-base sm:text-lg font-medium">
                   {item.title}
                 </h4>
-                <p className="text-muted-foreground text-sm">{item.desc}</p>
+                <p className="text-muted-foreground text-xs sm:text-sm text-center sm:text-left">{item.desc}</p>
                 <a
                   href={item.link.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-1 text-sm text-foreground duration-150 hover:text-muted-foreground font-medium group"
+                  className="flex items-center gap-1 text-xs sm:text-sm text-foreground duration-150 hover:text-muted-foreground font-medium group"
                 >
                   {item.link.name}
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 20 20"
                     fill="currentColor"
-                    className="w-5 h-5 transition-transform group-hover:translate-x-1"
+                    className="w-4 h-4 sm:w-5 sm:h-5 transition-transform group-hover:translate-x-1"
                   >
                     <path
                       fillRule="evenodd"
