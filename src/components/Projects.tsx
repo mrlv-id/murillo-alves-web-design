@@ -1,4 +1,11 @@
-import { useState } from "react";
+import { Badge } from "@/components/ui/badge";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 import { ArrowUpRight } from "lucide-react";
 
 interface Project {
@@ -18,127 +25,83 @@ const projects: Project[] = [
     url: "https://ramosagency.vercel.app/",
     category: "Web Design",
   },
+  {
+    id: 2,
+    title: "Em breve",
+    description: "Novo projeto em desenvolvimento.",
+    url: "#",
+    category: "Web Design",
+  },
+  {
+    id: 3,
+    title: "Em breve",
+    description: "Novo projeto em desenvolvimento.",
+    url: "#",
+    category: "Web Design",
+  },
 ];
 
 const Projects = () => {
-  const [hoveredId, setHoveredId] = useState<number | null>(null);
-
   return (
-    <section id="projetos" className="py-32 bg-background">
-      <div className="max-w-6xl mx-auto px-6 lg:px-8">
-        {/* Header */}
-        <div className="grid md:grid-cols-12 gap-8 mb-16">
-          <div className="md:col-span-4">
-            <span className="text-xs uppercase tracking-[0.2em] text-muted-foreground font-medium">
-              Projetos
-            </span>
-          </div>
-          <div className="md:col-span-8">
-            <p className="text-xl text-muted-foreground font-light">
-              Uma seleção de trabalhos recentes em design e desenvolvimento web.
-            </p>
-          </div>
-        </div>
-
-        {/* Projects Grid */}
-        <div className="space-y-2">
-          {projects.map((project) => (
-            <a
-              key={project.id}
-              href={project.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group block"
-              onMouseEnter={() => setHoveredId(project.id)}
-              onMouseLeave={() => setHoveredId(null)}
-            >
-              <div
-                className={`border border-border p-8 sm:p-10 transition-all duration-500 ${
-                  hoveredId === project.id
-                    ? "bg-foreground text-background border-foreground"
-                    : "bg-background hover:border-gray-300"
-                }`}
-              >
-                <div className="flex items-start justify-between gap-6">
-                  <div className="space-y-4 flex-1">
-                    <div className="flex items-center gap-4">
-                      <span
-                        className={`text-xs uppercase tracking-[0.15em] ${
-                          hoveredId === project.id
-                            ? "text-gray-400"
-                            : "text-muted-foreground"
-                        }`}
-                      >
-                        {project.category}
-                      </span>
-                      <span
-                        className={`text-xs ${
-                          hoveredId === project.id
-                            ? "text-gray-500"
-                            : "text-gray-300"
-                        }`}
-                      >
-                        01
-                      </span>
-                    </div>
-
-                    <h3
-                      className={`text-2xl sm:text-3xl font-medium tracking-tight transition-colors duration-300 ${
-                        hoveredId === project.id
-                          ? "text-background"
-                          : "text-foreground"
-                      }`}
-                    >
-                      {project.title}
-                    </h3>
-
-                    <p
-                      className={`text-sm max-w-lg transition-colors duration-300 ${
-                        hoveredId === project.id
-                          ? "text-gray-400"
-                          : "text-muted-foreground"
-                      }`}
-                    >
-                      {project.description}
-                    </p>
-                  </div>
-
-                  <div
-                    className={`w-12 h-12 rounded-full flex items-center justify-center transition-all duration-300 ${
-                      hoveredId === project.id
-                        ? "bg-background text-foreground"
-                        : "bg-gray-100 text-gray-400 group-hover:bg-gray-200"
-                    }`}
-                  >
-                    <ArrowUpRight
-                      className={`w-5 h-5 transition-transform duration-300 ${
-                        hoveredId === project.id ? "rotate-0" : "-rotate-45"
-                      }`}
-                    />
-                  </div>
-                </div>
-              </div>
-            </a>
-          ))}
-
-          {/* Placeholder for future projects */}
-          <div className="border border-dashed border-gray-200 p-8 sm:p-10">
-            <div className="flex items-center justify-center gap-3 text-gray-300">
-              <svg
-                className="w-5 h-5"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                strokeWidth="1.5"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M12 4.5v15m7.5-7.5h-15"
-                />
-              </svg>
-              <span className="text-sm">Novos projetos em breve</span>
+    <section id="projetos" className="w-full py-20 lg:py-40 bg-background">
+      <div className="container mx-auto px-6 lg:px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 justify-end items-end gap-10">
+          {/* Left Content */}
+          <div className="flex gap-4 flex-col items-start">
+            <div>
+              <Badge variant="outline" className="text-xs uppercase tracking-[0.15em]">
+                Projetos
+              </Badge>
             </div>
+            <div className="flex gap-2 flex-col">
+              <h2 className="text-xl md:text-3xl lg:text-5xl tracking-tighter lg:max-w-xl font-medium text-left text-foreground">
+                Uma seleção de trabalhos recentes
+              </h2>
+              <p className="text-lg max-w-xl lg:max-w-sm leading-relaxed tracking-tight text-muted-foreground text-left">
+                Projetos desenvolvidos com foco em design minimalista, 
+                experiência do usuário e performance. Cada trabalho representa 
+                um compromisso com a excelência visual e funcional.
+              </p>
+            </div>
+          </div>
+
+          {/* Right Carousel */}
+          <div className="w-full max-w-full px-6">
+            <Carousel>
+              <CarouselContent>
+                {projects.map((project) => (
+                  <CarouselItem key={project.id}>
+                    <a
+                      href={project.url}
+                      target={project.url !== "#" ? "_blank" : undefined}
+                      rel={project.url !== "#" ? "noopener noreferrer" : undefined}
+                      className={`group block ${project.url === "#" ? "pointer-events-none" : ""}`}
+                    >
+                      <div className="flex flex-col rounded-sm aspect-video bg-muted border border-border items-center justify-center p-6 transition-all duration-300 hover:bg-foreground hover:text-background hover:border-foreground">
+                        <div className="flex flex-col items-center justify-center text-center gap-3">
+                          <span className="text-xs uppercase tracking-[0.15em] text-muted-foreground group-hover:text-gray-400 transition-colors">
+                            {project.category}
+                          </span>
+                          <h3 className="text-2xl font-medium tracking-tight group-hover:text-background transition-colors">
+                            {project.title}
+                          </h3>
+                          <p className="text-sm text-muted-foreground max-w-xs group-hover:text-gray-400 transition-colors">
+                            {project.description}
+                          </p>
+                          {project.url !== "#" && (
+                            <div className="mt-4 w-10 h-10 rounded-full bg-background border border-border flex items-center justify-center group-hover:bg-background group-hover:border-background transition-all">
+                              <ArrowUpRight className="w-4 h-4 text-foreground transition-transform group-hover:rotate-0 -rotate-45" />
+                            </div>
+                          )}
+                        </div>
+                      </div>
+                    </a>
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+              <CarouselPrevious />
+              <CarouselNext />
+            </Carousel>
           </div>
         </div>
       </div>
