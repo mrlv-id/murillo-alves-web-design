@@ -21,13 +21,9 @@ const Hero = () => {
           </p>
 
           {/* Main Name */}
-          <h1 className="opacity-0 animate-fade-up stagger-2">
-            <span className="block text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-light tracking-tight text-foreground">
-              Murillo
-            </span>
-            <span className="block text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-medium tracking-tight text-foreground mt-2">
-              Alves
-            </span>
+          <h1 className="opacity-0 animate-fade-up stagger-2 text-5xl sm:text-6xl md:text-7xl lg:text-8xl tracking-tight text-foreground">
+            <span className="font-light">Murillo</span>{" "}
+            <span className="font-medium">Alves</span>
           </h1>
 
           {/* Decorative Line */}
