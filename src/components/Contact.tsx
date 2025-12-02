@@ -1,125 +1,88 @@
-import { useState } from "react";
-import { Button } from "@/components/ui/button";
-import { toast } from "@/hooks/use-toast";
+import { Mail, Linkedin, Instagram } from "lucide-react";
 
 const Contact = () => {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    message: "",
-  });
-  const [isSubmitting, setIsSubmitting] = useState(false);
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1000));
-
-    toast({
-      title: "Mensagem enviada",
-      description: "Obrigado pelo contato. Responderei em breve.",
-    });
-
-    setFormData({ name: "", email: "", message: "" });
-    setIsSubmitting(false);
-  };
+  const contactMethods = [
+    {
+      icon: <Mail className="w-6 h-6" />,
+      title: "Email",
+      desc: "Entre em contato diretamente para discutir seu projeto.",
+      link: {
+        name: "murilloalves@email.com",
+        href: "mailto:murilloalves@email.com",
+      },
+    },
+    {
+      icon: <Linkedin className="w-6 h-6" />,
+      title: "LinkedIn",
+      desc: "Conecte-se comigo para networking profissional.",
+      link: {
+        name: "Ver perfil",
+        href: "https://linkedin.com/in/murilloalves",
+      },
+    },
+    {
+      icon: <Instagram className="w-6 h-6" />,
+      title: "Instagram",
+      desc: "Acompanhe meu trabalho e inspirações.",
+      link: {
+        name: "@murilloalves",
+        href: "https://instagram.com/murilloalves",
+      },
+    },
+  ];
 
   return (
     <section id="contato" className="py-32 bg-secondary/30">
-      <div className="max-w-4xl mx-auto px-6 lg:px-8">
-        <div className="grid md:grid-cols-12 gap-12 md:gap-16">
-          {/* Label */}
-          <div className="md:col-span-4">
-            <span className="text-xs uppercase tracking-[0.2em] text-muted-foreground font-medium">
-              Contato
-            </span>
-            <p className="mt-6 text-muted-foreground text-sm leading-relaxed">
-              Interessado em trabalhar juntos? Envie uma mensagem e vamos
-              conversar sobre seu projeto.
-            </p>
-          </div>
-
-          {/* Form */}
-          <div className="md:col-span-8">
-            <form onSubmit={handleSubmit} className="space-y-8">
-              <div className="space-y-6">
-                {/* Name */}
-                <div className="space-y-2">
-                  <label
-                    htmlFor="name"
-                    className="text-xs uppercase tracking-[0.15em] text-muted-foreground"
-                  >
-                    Nome
-                  </label>
-                  <input
-                    type="text"
-                    id="name"
-                    required
-                    value={formData.name}
-                    onChange={(e) =>
-                      setFormData({ ...formData, name: e.target.value })
-                    }
-                    className="w-full bg-transparent border-b border-border py-3 text-foreground placeholder:text-gray-300 focus:border-foreground focus:outline-none transition-colors duration-300"
-                    placeholder="Seu nome"
-                  />
-                </div>
-
-                {/* Email */}
-                <div className="space-y-2">
-                  <label
-                    htmlFor="email"
-                    className="text-xs uppercase tracking-[0.15em] text-muted-foreground"
-                  >
-                    Email
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    required
-                    value={formData.email}
-                    onChange={(e) =>
-                      setFormData({ ...formData, email: e.target.value })
-                    }
-                    className="w-full bg-transparent border-b border-border py-3 text-foreground placeholder:text-gray-300 focus:border-foreground focus:outline-none transition-colors duration-300"
-                    placeholder="seu@email.com"
-                  />
-                </div>
-
-                {/* Message */}
-                <div className="space-y-2">
-                  <label
-                    htmlFor="message"
-                    className="text-xs uppercase tracking-[0.15em] text-muted-foreground"
-                  >
-                    Mensagem
-                  </label>
-                  <textarea
-                    id="message"
-                    required
-                    rows={4}
-                    value={formData.message}
-                    onChange={(e) =>
-                      setFormData({ ...formData, message: e.target.value })
-                    }
-                    className="w-full bg-transparent border-b border-border py-3 text-foreground placeholder:text-gray-300 focus:border-foreground focus:outline-none transition-colors duration-300 resize-none"
-                    placeholder="Conte sobre seu projeto..."
-                  />
-                </div>
-              </div>
-
-              <Button
-                type="submit"
-                variant="hero"
-                size="lg"
-                disabled={isSubmitting}
-                className="w-full sm:w-auto"
+      <div className="max-w-6xl mx-auto px-6 lg:px-8 gap-12 lg:flex">
+        <div className="max-w-md">
+          <span className="text-xs uppercase tracking-[0.2em] text-muted-foreground font-medium">
+            Contato
+          </span>
+          <h3 className="mt-4 text-foreground text-3xl font-medium sm:text-4xl tracking-tight">
+            Vamos conversar
+          </h3>
+          <p className="mt-4 text-muted-foreground leading-relaxed">
+            Interessado em trabalhar juntos? Entre em contato e vamos
+            transformar suas ideias em realidade.
+          </p>
+        </div>
+        <div className="flex-1">
+          <ul className="mt-12 gap-y-6 gap-x-12 items-start md:flex lg:gap-x-0 lg:mt-0">
+            {contactMethods.map((item, idx) => (
+              <li
+                key={idx}
+                className="space-y-3 border-t border-border py-6 md:max-w-sm md:py-0 md:border-t-0 lg:border-l lg:px-12 lg:max-w-none first:lg:border-l-0 first:lg:pl-0"
               >
-                {isSubmitting ? "Enviando..." : "Enviar mensagem"}
-              </Button>
-            </form>
-          </div>
+                <div className="w-12 h-12 rounded-full border border-border flex items-center justify-center text-foreground">
+                  {item.icon}
+                </div>
+                <h4 className="text-foreground text-lg font-medium">
+                  {item.title}
+                </h4>
+                <p className="text-muted-foreground text-sm">{item.desc}</p>
+                <a
+                  href={item.link.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-1 text-sm text-foreground duration-150 hover:text-muted-foreground font-medium group"
+                >
+                  {item.link.name}
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                    className="w-5 h-5 transition-transform group-hover:translate-x-1"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M5 10a.75.75 0 01.75-.75h6.638L10.23 7.29a.75.75 0 111.04-1.08l3.5 3.25a.75.75 0 010 1.08l-3.5 3.25a.75.75 0 11-1.04-1.08l2.158-1.96H5.75A.75.75 0 015 10z"
+                      clipRule="evenodd"
+                    />
+                  </svg>
+                </a>
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
     </section>
