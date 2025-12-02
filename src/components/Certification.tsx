@@ -56,11 +56,13 @@ const Certification = () => {
                 <div className="h-px bg-border" />
 
                 <div className="flex items-center justify-between">
-                  <p className="text-sm text-gray-400">
-                    Certificado — Disponível em breve
+                  <p className="text-sm text-muted-foreground">
+                    Certificado — Disponível
                   </p>
-                  <Button variant="disabled" size="sm" disabled>
-                    Download
+                  <Button variant="outline" size="sm" asChild>
+                    <a href="/certificates/certificado-web-development.pdf" download>
+                      Download
+                    </a>
                   </Button>
                 </div>
               </div>
