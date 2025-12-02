@@ -39,43 +39,43 @@ const Projects = () => {
                     rel="noopener noreferrer"
                     className="group block"
                   >
-                    <div className="flex flex-col rounded-md aspect-video bg-muted items-center justify-center p-6 transition-all hover:bg-foreground hover:text-background border border-border hover:border-foreground">
+                    <div className="flex flex-col rounded-md aspect-video bg-muted items-center justify-center p-6 transition-all hover:bg-gradient-to-br hover:from-gray-100 hover:to-gray-200 dark:hover:from-gray-800 dark:hover:to-gray-900 border border-border hover:border-gray-300 dark:hover:border-gray-700">
                       {/* Header com ícone e categoria */}
                       <div className="flex items-center gap-2 mb-3">
-                        <Globe className="w-4 h-4 text-muted-foreground group-hover:text-gray-400" />
-                        <span className="text-xs uppercase tracking-widest text-muted-foreground group-hover:text-gray-400">
+                        <Globe className="w-4 h-4 text-muted-foreground group-hover:text-gray-600 dark:group-hover:text-gray-400" />
+                        <span className="text-xs uppercase tracking-widest text-muted-foreground group-hover:text-gray-600 dark:group-hover:text-gray-400">
                           Web Design
                         </span>
                       </div>
                       
                       {/* Título */}
-                      <h3 className="text-xl font-medium mb-2 group-hover:text-background">
+                      <h3 className="text-xl font-medium mb-2">
                         Ramos Agency
                       </h3>
                       
                       {/* Descrição */}
-                      <p className="text-sm text-muted-foreground text-center max-w-xs mb-4 group-hover:text-gray-400">
+                      <p className="text-sm text-muted-foreground text-center max-w-xs mb-4 group-hover:text-gray-600 dark:group-hover:text-gray-400">
                         Site desenvolvido para uma agência de assessoria e consultoria para médicos high ticket.
                       </p>
                       
                       {/* Tech Badges */}
                       <div className="flex flex-wrap gap-2 justify-center mb-4">
-                        <div className="flex items-center gap-1 px-2 py-1 rounded-full bg-background/10 border border-border group-hover:border-gray-600 group-hover:bg-background/5">
+                        <div className="flex items-center gap-1 px-2 py-1 rounded-full bg-background/10 border border-border group-hover:border-gray-400 dark:group-hover:border-gray-600">
                           <Code className="w-3 h-3" />
                           <span className="text-xs">React</span>
                         </div>
-                        <div className="flex items-center gap-1 px-2 py-1 rounded-full bg-background/10 border border-border group-hover:border-gray-600 group-hover:bg-background/5">
+                        <div className="flex items-center gap-1 px-2 py-1 rounded-full bg-background/10 border border-border group-hover:border-gray-400 dark:group-hover:border-gray-600">
                           <Palette className="w-3 h-3" />
                           <span className="text-xs">Tailwind</span>
                         </div>
-                        <div className="flex items-center gap-1 px-2 py-1 rounded-full bg-background/10 border border-border group-hover:border-gray-600 group-hover:bg-background/5">
+                        <div className="flex items-center gap-1 px-2 py-1 rounded-full bg-background/10 border border-border group-hover:border-gray-400 dark:group-hover:border-gray-600">
                           <Layers className="w-3 h-3" />
                           <span className="text-xs">Vercel</span>
                         </div>
                       </div>
                       
                       {/* CTA */}
-                      <div className="flex items-center gap-2 text-sm text-muted-foreground group-hover:text-background transition-colors">
+                      <div className="flex items-center gap-2 text-sm text-muted-foreground group-hover:text-gray-600 dark:group-hover:text-gray-400 transition-colors">
                         <span>Ver projeto</span>
                         <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                       </div>
