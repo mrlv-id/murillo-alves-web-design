@@ -1,9 +1,17 @@
 import { Button } from "@/components/ui/button";
+import { Particles } from "@/components/ui/particles";
 
 const Certification = () => {
   return (
-    <section className="py-24 bg-secondary/50">
-      <div className="max-w-4xl mx-auto px-6 lg:px-8">
+    <section className="py-24 bg-secondary/50 relative overflow-hidden">
+      <Particles
+        className="absolute inset-0"
+        quantity={80}
+        ease={80}
+        color="#888888"
+        size={0.5}
+      />
+      <div className="max-w-4xl mx-auto px-6 lg:px-8 relative z-10">
         <div className="grid md:grid-cols-12 gap-12 md:gap-16 items-center">
           {/* Label */}
           <div className="md:col-span-4">
