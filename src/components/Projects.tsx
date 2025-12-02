@@ -41,51 +41,57 @@ const Projects = () => {
                     className="group block"
                   >
                     <div 
-                      className="relative flex flex-col rounded-md aspect-video items-center justify-center p-6 transition-all border border-border hover:border-gray-300 dark:hover:border-gray-700 overflow-hidden group"
+                      className="relative flex flex-col rounded-md aspect-video items-center justify-center p-6 transition-all border border-border hover:border-white/20 overflow-hidden group"
                       style={{ backgroundImage: `url(${ramosAgencyPreview})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
                     >
-                      {/* Dark overlay */}
-                      <div className="absolute inset-0 bg-black/50" />
-                      {/* Hover gradient overlay */}
-                      <div className="absolute inset-0 bg-gradient-to-br from-gray-500/30 to-gray-700/40 opacity-0 group-hover:opacity-100 transition-opacity" />
-                      {/* Header com ícone e categoria */}
-                      <div className="relative z-10 flex items-center gap-2 mb-3">
-                        <Globe className="w-4 h-4 text-white/90" />
-                        <span className="text-xs uppercase tracking-widest text-white/90">
-                          Web Design
-                        </span>
-                      </div>
+                      {/* Frosted glass overlay with grain */}
+                      <div className="absolute inset-0 bg-black/60 backdrop-blur-sm transition-all duration-500 group-hover:bg-black/20 group-hover:backdrop-blur-0" />
+                      <div 
+                        className="absolute inset-0 opacity-40 transition-opacity duration-500 group-hover:opacity-0 mix-blend-overlay"
+                        style={{ backgroundImage: 'url("data:image/svg+xml,%3Csvg viewBox=\'0 0 256 256\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cfilter id=\'noise\'%3E%3CfeTurbulence type=\'fractalNoise\' baseFrequency=\'0.8\' numOctaves=\'4\' stitchTiles=\'stitch\'/%3E%3C/filter%3E%3Crect width=\'100%25\' height=\'100%25\' filter=\'url(%23noise)\'/%3E%3C/svg%3E")' }}
+                      />
                       
-                      {/* Título */}
-                      <h3 className="relative z-10 text-xl font-semibold mb-2 text-white">
-                        Ramos Agency
-                      </h3>
-                      
-                      {/* Descrição */}
-                      <p className="relative z-10 text-sm text-white/80 text-center max-w-xs mb-4">
-                        Site desenvolvido para uma agência de assessoria e consultoria para médicos high ticket.
-                      </p>
-                      
-                      {/* Tech Badges */}
-                      <div className="relative z-10 flex flex-wrap gap-2 justify-center mb-4">
-                        <div className="flex items-center gap-1 px-2 py-1 rounded-full bg-white/20 border border-white/30">
-                          <Code className="w-3 h-3 text-white" />
-                          <span className="text-xs text-white">React</span>
+                      {/* Content - hides on hover */}
+                      <div className="relative z-10 flex flex-col items-center transition-all duration-500 opacity-100 group-hover:opacity-0 group-hover:scale-95">
+                        {/* Header com ícone e categoria */}
+                        <div className="flex items-center gap-2 mb-3">
+                          <Globe className="w-4 h-4 text-white" />
+                          <span className="text-xs uppercase tracking-widest text-white font-medium">
+                            Web Design
+                          </span>
                         </div>
-                        <div className="flex items-center gap-1 px-2 py-1 rounded-full bg-white/20 border border-white/30">
-                          <Palette className="w-3 h-3 text-white" />
-                          <span className="text-xs text-white">Tailwind</span>
+                        
+                        {/* Título */}
+                        <h3 className="text-xl font-semibold mb-2 text-white drop-shadow-lg">
+                          Ramos Agency
+                        </h3>
+                        
+                        {/* Descrição */}
+                        <p className="text-sm text-white/90 text-center max-w-xs mb-4 drop-shadow-md">
+                          Site desenvolvido para uma agência de assessoria e consultoria para médicos high ticket.
+                        </p>
+                        
+                        {/* Tech Badges */}
+                        <div className="flex flex-wrap gap-2 justify-center mb-4">
+                          <div className="flex items-center gap-1 px-2 py-1 rounded-full bg-white/20 border border-white/40 backdrop-blur-sm">
+                            <Code className="w-3 h-3 text-white" />
+                            <span className="text-xs text-white font-medium">React</span>
+                          </div>
+                          <div className="flex items-center gap-1 px-2 py-1 rounded-full bg-white/20 border border-white/40 backdrop-blur-sm">
+                            <Palette className="w-3 h-3 text-white" />
+                            <span className="text-xs text-white font-medium">Tailwind</span>
+                          </div>
+                          <div className="flex items-center gap-1 px-2 py-1 rounded-full bg-white/20 border border-white/40 backdrop-blur-sm">
+                            <Layers className="w-3 h-3 text-white" />
+                            <span className="text-xs text-white font-medium">Vercel</span>
+                          </div>
                         </div>
-                        <div className="flex items-center gap-1 px-2 py-1 rounded-full bg-white/20 border border-white/30">
-                          <Layers className="w-3 h-3 text-white" />
-                          <span className="text-xs text-white">Vercel</span>
+                        
+                        {/* CTA */}
+                        <div className="flex items-center gap-2 text-sm text-white font-medium">
+                          <span>Ver projeto</span>
+                          <ArrowUpRight className="w-4 h-4" />
                         </div>
-                      </div>
-                      
-                      {/* CTA */}
-                      <div className="relative z-10 flex items-center gap-2 text-sm text-white font-medium transition-colors">
-                        <span>Ver projeto</span>
-                        <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                       </div>
                     </div>
                   </a>
