@@ -1,6 +1,9 @@
 import murilloAboutPhoto from "@/assets/murillo-about-photo.png";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const About = () => {
+  const { t } = useLanguage();
+
   return (
     <section id="sobre" className="py-32 bg-background">
       <div className="max-w-4xl mx-auto px-6 lg:px-8">
@@ -8,7 +11,7 @@ const About = () => {
           {/* Label + Photo */}
           <div className="md:col-span-4 space-y-6">
             <span className="text-xs uppercase tracking-[0.2em] text-muted-foreground font-medium">
-              Sobre mim
+              {t("about.label")}
             </span>
             <div className="w-[240px] h-[360px] rounded-[10px] overflow-hidden">
               <img 
@@ -22,20 +25,18 @@ const About = () => {
           {/* Content */}
           <div className="md:col-span-8 space-y-8">
             <p className="text-2xl sm:text-3xl font-light leading-snug text-foreground tracking-tight">
-              Designer de experiências digitais com foco em criar interfaces minimalistas, 
-              funcionais e visualmente impactantes.
+              {t("about.headline")}
             </p>
 
             <div className="space-y-6 text-muted-foreground leading-relaxed">
               <p>
-                Tenho 22 anos e sou graduado em Desenvolvimento Web pela{" "}
-                <span className="text-foreground">Universidade Salvador (UNIFACS)</span>. 
-                Minha abordagem combina estética refinada com usabilidade intuitiva.
+                {t("about.bio1")}{" "}
+                <span className="text-foreground">{t("about.university")}</span>.{" "}
+                {t("about.bio2")}
               </p>
               <p>
-                Acredito que o design deve ser invisível — quando bem executado, 
-                ele simplesmente funciona, guiando o usuário sem esforço através 
-                da experiência.
+                {t("about.philosophy1")}{" "}
+                {t("about.philosophy2")}
               </p>
             </div>
 
