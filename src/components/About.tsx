@@ -1,13 +1,22 @@
+import murilloPhoto from "@/assets/murillo-photo.png";
+
 const About = () => {
   return (
     <section id="sobre" className="py-32 bg-background">
       <div className="max-w-4xl mx-auto px-6 lg:px-8">
         <div className="grid md:grid-cols-12 gap-12 md:gap-16">
-          {/* Label */}
-          <div className="md:col-span-4">
+          {/* Label + Photo */}
+          <div className="md:col-span-4 space-y-8">
             <span className="text-xs uppercase tracking-[0.2em] text-muted-foreground font-medium">
               Sobre mim
             </span>
+            <div className="aspect-[3/4] w-full overflow-hidden">
+              <img
+                src={murilloPhoto}
+                alt="Murillo Alves"
+                className="w-full h-full object-cover grayscale"
+              />
+            </div>
           </div>
 
           {/* Content */}
