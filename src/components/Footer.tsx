@@ -1,4 +1,7 @@
+import { useLanguage } from "@/contexts/LanguageContext";
+
 const Footer = () => {
+  const { t } = useLanguage();
   const currentYear = new Date().getFullYear();
 
   return (
@@ -7,7 +10,7 @@ const Footer = () => {
         <div className="flex flex-col sm:flex-row items-center justify-between gap-6">
           <div className="flex items-center gap-2">
             <span className="text-sm text-muted-foreground">
-              © {currentYear} Murillo Alves
+              {t("footer.copyright").replace("{year}", currentYear.toString())}
             </span>
           </div>
 

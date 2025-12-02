@@ -2,12 +2,14 @@ import { useEffect, useMemo, useState } from "react";
 import { motion } from "framer-motion";
 import { MoveRight, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 function AnimatedHero() {
+  const { t } = useLanguage();
   const [titleNumber, setTitleNumber] = useState(0);
   const titles = useMemo(
-    () => ["criativo", "moderno", "elegante", "inovador", "único"],
-    []
+    () => [t("hero.word1"), t("hero.word2"), t("hero.word3"), t("hero.word4"), t("hero.word5")],
+    [t]
   );
 
   useEffect(() => {
@@ -27,7 +29,7 @@ function AnimatedHero() {
         <div className="flex gap-8 py-20 lg:py-40 items-center justify-center flex-col">
           <div>
             <span className="text-xs uppercase tracking-[0.3em] text-muted-foreground font-medium px-4 py-2 border border-border rounded-full">
-              Web Designer
+              {t("hero.badge")}
             </span>
           </div>
           <div className="flex gap-4 flex-col">
@@ -61,18 +63,18 @@ function AnimatedHero() {
             </h1>
 
             <p className="text-lg md:text-xl leading-relaxed tracking-tight text-muted-foreground max-w-2xl text-center">
-              Criando experiências digitais que transformam ideias em interfaces memoráveis e funcionais.
+              {t("hero.description")}
             </p>
           </div>
           <div className="flex flex-row gap-3">
             <Button size="lg" className="gap-4" variant="outline" asChild>
               <a href="#contato">
-                Entrar em contato <Mail className="w-4 h-4" />
+                {t("hero.contact")} <Mail className="w-4 h-4" />
               </a>
             </Button>
             <Button size="lg" className="gap-4" asChild>
               <a href="#projetos">
-                Ver projetos <MoveRight className="w-4 h-4" />
+                {t("hero.projects")} <MoveRight className="w-4 h-4" />
               </a>
             </Button>
           </div>

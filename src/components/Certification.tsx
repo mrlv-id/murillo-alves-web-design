@@ -1,7 +1,10 @@
 import { Button } from "@/components/ui/button";
 import { Particles } from "@/components/ui/particles";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Certification = () => {
+  const { t } = useLanguage();
+
   return (
     <section className="py-24 bg-secondary/50 relative overflow-hidden">
       <Particles
@@ -16,7 +19,7 @@ const Certification = () => {
           {/* Label */}
           <div className="md:col-span-4">
             <span className="text-xs uppercase tracking-[0.2em] text-muted-foreground font-medium">
-              Certificação
+              {t("cert.label")}
             </span>
           </div>
 
@@ -30,10 +33,10 @@ const Certification = () => {
                 <div className="flex items-start justify-between">
                   <div>
                     <h3 className="text-lg font-medium text-foreground tracking-tight">
-                      Desenvolvimento Web
+                      {t("cert.title")}
                     </h3>
                     <p className="text-sm text-muted-foreground mt-1">
-                      Universidade Salvador — UNIFACS
+                      {t("cert.university")}
                     </p>
                   </div>
                   <div className="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center">
@@ -57,11 +60,11 @@ const Certification = () => {
 
                 <div className="flex items-center justify-between">
                   <p className="text-sm text-muted-foreground">
-                    Certificado — Disponível
+                    {t("cert.status")}
                   </p>
                   <Button variant="outline" size="sm" asChild>
                     <a href="/certificates/certificado-web-development.pdf" download>
-                      Download
+                      {t("cert.download")}
                     </a>
                   </Button>
                 </div>
