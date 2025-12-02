@@ -20,7 +20,7 @@ const Contact = () => {
       desc: t("contact.twitter.desc"),
       link: {
         name: t("contact.twitter.link"),
-        href: "https://twitter.com/murilloalves",
+        href: "https://x.com/mlvsdev",
       },
     },
   ];
