@@ -30,8 +30,8 @@ const Projects = () => {
               </p>
             </div>
           </div>
-          <div className="w-full overflow-hidden">
-            <Carousel className="w-full max-w-full">
+          <div className="w-full min-w-0">
+            <Carousel className="w-full">
               <CarouselContent className="-ml-2 md:-ml-4">
                 {/* Projeto Ramos Agency */}
                 <CarouselItem className="pl-2 md:pl-4">
