@@ -7,6 +7,7 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import { ArrowUpRight, Globe, Layers, Palette, Code } from "lucide-react";
+import ramosAgencyPreview from "@/assets/projects/ramos-agency-preview.png";
 
 const Projects = () => {
   return (
@@ -39,43 +40,50 @@ const Projects = () => {
                     rel="noopener noreferrer"
                     className="group block"
                   >
-                    <div className="flex flex-col rounded-md aspect-video bg-muted items-center justify-center p-6 transition-all hover:bg-gradient-to-br hover:from-gray-100 hover:to-gray-200 dark:hover:from-gray-800 dark:hover:to-gray-900 border border-border hover:border-gray-300 dark:hover:border-gray-700">
+                    <div 
+                      className="relative flex flex-col rounded-md aspect-video items-center justify-center p-6 transition-all border border-border hover:border-gray-300 dark:hover:border-gray-700 overflow-hidden group"
+                      style={{ backgroundImage: `url(${ramosAgencyPreview})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
+                    >
+                      {/* Dark overlay */}
+                      <div className="absolute inset-0 bg-black/80" />
+                      {/* Hover gradient overlay */}
+                      <div className="absolute inset-0 bg-gradient-to-br from-gray-500/30 to-gray-700/40 opacity-0 group-hover:opacity-100 transition-opacity" />
                       {/* Header com ícone e categoria */}
-                      <div className="flex items-center gap-2 mb-3">
-                        <Globe className="w-4 h-4 text-muted-foreground group-hover:text-gray-600 dark:group-hover:text-gray-400" />
-                        <span className="text-xs uppercase tracking-widest text-muted-foreground group-hover:text-gray-600 dark:group-hover:text-gray-400">
+                      <div className="relative z-10 flex items-center gap-2 mb-3">
+                        <Globe className="w-4 h-4 text-gray-300 group-hover:text-gray-200" />
+                        <span className="text-xs uppercase tracking-widest text-gray-300 group-hover:text-gray-200">
                           Web Design
                         </span>
                       </div>
                       
                       {/* Título */}
-                      <h3 className="text-xl font-medium mb-2">
+                      <h3 className="relative z-10 text-xl font-medium mb-2 text-white">
                         Ramos Agency
                       </h3>
                       
                       {/* Descrição */}
-                      <p className="text-sm text-muted-foreground text-center max-w-xs mb-4 group-hover:text-gray-600 dark:group-hover:text-gray-400">
+                      <p className="relative z-10 text-sm text-gray-300 text-center max-w-xs mb-4 group-hover:text-gray-200">
                         Site desenvolvido para uma agência de assessoria e consultoria para médicos high ticket.
                       </p>
                       
                       {/* Tech Badges */}
-                      <div className="flex flex-wrap gap-2 justify-center mb-4">
-                        <div className="flex items-center gap-1 px-2 py-1 rounded-full bg-background/10 border border-border group-hover:border-gray-400 dark:group-hover:border-gray-600">
-                          <Code className="w-3 h-3" />
-                          <span className="text-xs">React</span>
+                      <div className="relative z-10 flex flex-wrap gap-2 justify-center mb-4">
+                        <div className="flex items-center gap-1 px-2 py-1 rounded-full bg-white/10 border border-white/20 group-hover:border-white/40">
+                          <Code className="w-3 h-3 text-gray-300" />
+                          <span className="text-xs text-gray-300">React</span>
                         </div>
-                        <div className="flex items-center gap-1 px-2 py-1 rounded-full bg-background/10 border border-border group-hover:border-gray-400 dark:group-hover:border-gray-600">
-                          <Palette className="w-3 h-3" />
-                          <span className="text-xs">Tailwind</span>
+                        <div className="flex items-center gap-1 px-2 py-1 rounded-full bg-white/10 border border-white/20 group-hover:border-white/40">
+                          <Palette className="w-3 h-3 text-gray-300" />
+                          <span className="text-xs text-gray-300">Tailwind</span>
                         </div>
-                        <div className="flex items-center gap-1 px-2 py-1 rounded-full bg-background/10 border border-border group-hover:border-gray-400 dark:group-hover:border-gray-600">
-                          <Layers className="w-3 h-3" />
-                          <span className="text-xs">Vercel</span>
+                        <div className="flex items-center gap-1 px-2 py-1 rounded-full bg-white/10 border border-white/20 group-hover:border-white/40">
+                          <Layers className="w-3 h-3 text-gray-300" />
+                          <span className="text-xs text-gray-300">Vercel</span>
                         </div>
                       </div>
                       
                       {/* CTA */}
-                      <div className="flex items-center gap-2 text-sm text-muted-foreground group-hover:text-gray-600 dark:group-hover:text-gray-400 transition-colors">
+                      <div className="relative z-10 flex items-center gap-2 text-sm text-gray-300 group-hover:text-gray-200 transition-colors">
                         <span>Ver projeto</span>
                         <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                       </div>
