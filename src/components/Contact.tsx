@@ -1,4 +1,4 @@
-import { Mail, Linkedin, Instagram } from "lucide-react";
+import { Mail, Twitter } from "lucide-react";
 
 const Contact = () => {
   const contactMethods = [
@@ -7,26 +7,17 @@ const Contact = () => {
       title: "Email",
       desc: "Entre em contato diretamente para discutir seu projeto.",
       link: {
-        name: "murilloalves@email.com",
-        href: "mailto:murilloalves@email.com",
+        name: "mlvs.dev@gmail.com",
+        href: "mailto:mlvs.dev@gmail.com",
       },
     },
     {
-      icon: <Linkedin className="w-6 h-6" />,
-      title: "LinkedIn",
-      desc: "Conecte-se comigo para networking profissional.",
+      icon: <Twitter className="w-6 h-6" />,
+      title: "Twitter",
+      desc: "Acompanhe meu trabalho e novidades.",
       link: {
         name: "Ver perfil",
-        href: "https://linkedin.com/in/murilloalves",
-      },
-    },
-    {
-      icon: <Instagram className="w-6 h-6" />,
-      title: "Instagram",
-      desc: "Acompanhe meu trabalho e inspirações.",
-      link: {
-        name: "@murilloalves",
-        href: "https://instagram.com/murilloalves",
+        href: "https://twitter.com/murilloalves",
       },
     },
   ];
