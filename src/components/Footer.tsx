@@ -5,21 +5,21 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="py-12 bg-background border-t border-border">
-      <div className="max-w-6xl mx-auto px-6 lg:px-8">
-        <div className="flex flex-col sm:flex-row items-center justify-between gap-6">
+    <footer className="py-8 sm:py-12 bg-background border-t border-border">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex flex-col items-center gap-4 sm:gap-6 sm:flex-row sm:justify-between">
           <div className="flex items-center gap-2">
-            <span className="text-sm text-muted-foreground">
+            <span className="text-xs sm:text-sm text-muted-foreground text-center sm:text-left">
               {t("footer.copyright").replace("{year}", currentYear.toString())}
             </span>
           </div>
 
-          <div className="flex items-center gap-8">
+          <div className="flex items-center gap-6 sm:gap-8">
             <a
               href="https://linkedin.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-sm text-muted-foreground hover:text-foreground transition-colors duration-300"
+              className="text-xs sm:text-sm text-muted-foreground hover:text-foreground transition-colors duration-300"
             >
               LinkedIn
             </a>
@@ -27,7 +27,7 @@ const Footer = () => {
               href="https://instagram.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-sm text-muted-foreground hover:text-foreground transition-colors duration-300"
+              className="text-xs sm:text-sm text-muted-foreground hover:text-foreground transition-colors duration-300"
             >
               Instagram
             </a>
@@ -35,7 +35,7 @@ const Footer = () => {
               href="https://behance.net"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-sm text-muted-foreground hover:text-foreground transition-colors duration-300"
+              className="text-xs sm:text-sm text-muted-foreground hover:text-foreground transition-colors duration-300"
             >
               Behance
             </a>

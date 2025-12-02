@@ -6,7 +6,7 @@ const Certification = () => {
   const { t } = useLanguage();
 
   return (
-    <section className="py-24 bg-secondary/50 relative overflow-hidden">
+    <section className="py-16 sm:py-20 md:py-24 bg-secondary/50 relative overflow-hidden">
       <Particles
         className="absolute inset-0"
         quantity={80}
@@ -14,10 +14,10 @@ const Certification = () => {
         color="#888888"
         size={0.5}
       />
-      <div className="max-w-4xl mx-auto px-6 lg:px-8 relative z-10">
-        <div className="grid md:grid-cols-12 gap-12 md:gap-16 items-center">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="grid md:grid-cols-12 gap-8 sm:gap-10 md:gap-16 items-center">
           {/* Label */}
-          <div className="md:col-span-4">
+          <div className="md:col-span-4 text-center md:text-left">
             <span className="text-xs uppercase tracking-[0.2em] text-muted-foreground font-medium">
               {t("cert.label")}
             </span>
@@ -25,21 +25,21 @@ const Certification = () => {
 
           {/* Content */}
           <div className="md:col-span-8">
-            <div className="bg-background border border-border p-8 sm:p-10 relative overflow-hidden group">
+            <div className="bg-background border border-border p-6 sm:p-8 md:p-10 relative overflow-hidden group">
               {/* Subtle corner accent */}
-              <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-bl from-gray-100 to-transparent" />
+              <div className="absolute top-0 right-0 w-16 sm:w-20 h-16 sm:h-20 bg-gradient-to-bl from-gray-100 to-transparent" />
 
-              <div className="relative space-y-6">
-                <div className="flex items-start justify-between">
-                  <div>
-                    <h3 className="text-lg font-medium text-foreground tracking-tight">
+              <div className="relative space-y-4 sm:space-y-6">
+                <div className="flex flex-col sm:flex-row items-start justify-between gap-4">
+                  <div className="text-center sm:text-left w-full sm:w-auto">
+                    <h3 className="text-base sm:text-lg font-medium text-foreground tracking-tight">
                       {t("cert.title")}
                     </h3>
-                    <p className="text-sm text-muted-foreground mt-1">
+                    <p className="text-xs sm:text-sm text-muted-foreground mt-1">
                       {t("cert.university")}
                     </p>
                   </div>
-                  <div className="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center">
+                  <div className="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center mx-auto sm:mx-0 shrink-0">
                     <svg
                       className="w-5 h-5 text-gray-400"
                       fill="none"
@@ -58,11 +58,11 @@ const Certification = () => {
 
                 <div className="h-px bg-border" />
 
-                <div className="flex items-center justify-between">
-                  <p className="text-sm text-muted-foreground">
+                <div className="flex flex-col sm:flex-row items-center justify-between gap-3 sm:gap-0">
+                  <p className="text-xs sm:text-sm text-muted-foreground">
                     {t("cert.status")}
                   </p>
-                  <Button variant="outline" size="sm" asChild>
+                  <Button variant="outline" size="sm" className="w-full sm:w-auto" asChild>
                     <a href="/certificates/certificado-web-development.pdf" download>
                       {t("cert.download")}
                     </a>
