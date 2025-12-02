@@ -50,40 +50,40 @@ const Projects = () => {
                       <div className="absolute inset-0 bg-gradient-to-br from-gray-500/30 to-gray-700/40 opacity-0 group-hover:opacity-100 transition-opacity" />
                       {/* Header com ícone e categoria */}
                       <div className="relative z-10 flex items-center gap-2 mb-3">
-                        <Globe className="w-4 h-4 text-gray-300 group-hover:text-gray-200" />
-                        <span className="text-xs uppercase tracking-widest text-gray-300 group-hover:text-gray-200">
+                        <Globe className="w-4 h-4 text-white/90" />
+                        <span className="text-xs uppercase tracking-widest text-white/90">
                           Web Design
                         </span>
                       </div>
                       
                       {/* Título */}
-                      <h3 className="relative z-10 text-xl font-medium mb-2 text-white">
+                      <h3 className="relative z-10 text-xl font-semibold mb-2 text-white">
                         Ramos Agency
                       </h3>
                       
                       {/* Descrição */}
-                      <p className="relative z-10 text-sm text-gray-300 text-center max-w-xs mb-4 group-hover:text-gray-200">
+                      <p className="relative z-10 text-sm text-white/80 text-center max-w-xs mb-4">
                         Site desenvolvido para uma agência de assessoria e consultoria para médicos high ticket.
                       </p>
                       
                       {/* Tech Badges */}
                       <div className="relative z-10 flex flex-wrap gap-2 justify-center mb-4">
-                        <div className="flex items-center gap-1 px-2 py-1 rounded-full bg-white/10 border border-white/20 group-hover:border-white/40">
-                          <Code className="w-3 h-3 text-gray-300" />
-                          <span className="text-xs text-gray-300">React</span>
+                        <div className="flex items-center gap-1 px-2 py-1 rounded-full bg-white/20 border border-white/30">
+                          <Code className="w-3 h-3 text-white" />
+                          <span className="text-xs text-white">React</span>
                         </div>
-                        <div className="flex items-center gap-1 px-2 py-1 rounded-full bg-white/10 border border-white/20 group-hover:border-white/40">
-                          <Palette className="w-3 h-3 text-gray-300" />
-                          <span className="text-xs text-gray-300">Tailwind</span>
+                        <div className="flex items-center gap-1 px-2 py-1 rounded-full bg-white/20 border border-white/30">
+                          <Palette className="w-3 h-3 text-white" />
+                          <span className="text-xs text-white">Tailwind</span>
                         </div>
-                        <div className="flex items-center gap-1 px-2 py-1 rounded-full bg-white/10 border border-white/20 group-hover:border-white/40">
-                          <Layers className="w-3 h-3 text-gray-300" />
-                          <span className="text-xs text-gray-300">Vercel</span>
+                        <div className="flex items-center gap-1 px-2 py-1 rounded-full bg-white/20 border border-white/30">
+                          <Layers className="w-3 h-3 text-white" />
+                          <span className="text-xs text-white">Vercel</span>
                         </div>
                       </div>
                       
                       {/* CTA */}
-                      <div className="relative z-10 flex items-center gap-2 text-sm text-gray-300 group-hover:text-gray-200 transition-colors">
+                      <div className="relative z-10 flex items-center gap-2 text-sm text-white font-medium transition-colors">
                         <span>Ver projeto</span>
                         <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                       </div>
