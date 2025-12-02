@@ -45,7 +45,7 @@ const Projects = () => {
                       style={{ backgroundImage: `url(${ramosAgencyPreview})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
                     >
                       {/* Dark overlay */}
-                      <div className="absolute inset-0 bg-black/80" />
+                      <div className="absolute inset-0 bg-black/50" />
                       {/* Hover gradient overlay */}
                       <div className="absolute inset-0 bg-gradient-to-br from-gray-500/30 to-gray-700/40 opacity-0 group-hover:opacity-100 transition-opacity" />
                       {/* Header com ícone e categoria */}
