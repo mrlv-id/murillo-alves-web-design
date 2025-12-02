@@ -10,11 +10,11 @@ const About = () => {
             <span className="text-xs uppercase tracking-[0.2em] text-muted-foreground font-medium">
               Sobre mim
             </span>
-            <div className="w-full max-w-[280px] rounded-lg overflow-hidden">
+            <div className="w-[240px] h-[360px] rounded-[10px] overflow-hidden">
               <img 
                 src={murilloAboutPhoto} 
                 alt="Murillo Alves" 
-                className="w-full h-auto grayscale"
+                className="w-full h-full object-cover object-center grayscale"
               />
             </div>
           </div>
