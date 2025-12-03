@@ -49,6 +49,9 @@ const translations = {
     "projects.ramos.category": "Web Design",
     "projects.ramos.description": "Website developed for a consulting and advisory agency for high-ticket doctors.",
     "projects.ramos.cta": "View project",
+    "projects.paw.category": "Hero Section",
+    "projects.paw.description": "Hero section developed for a cat blog with warm tones and modern design.",
+    "projects.paw.cta": "View project",
     "projects.coming": "More projects coming soon...",
     "projects.developing": "New work being developed",
     
@@ -105,6 +108,9 @@ const translations = {
     "projects.ramos.category": "Web Design",
     "projects.ramos.description": "Site desenvolvido para uma agência de assessoria e consultoria para médicos high ticket.",
     "projects.ramos.cta": "Ver projeto",
+    "projects.paw.category": "Hero Section",
+    "projects.paw.description": "Hero section desenvolvida para um blog de gatos com tons quentes e design moderno.",
+    "projects.paw.cta": "Ver projeto",
     "projects.coming": "Mais projetos em breve...",
     "projects.developing": "Novos trabalhos sendo desenvolvidos",
     
