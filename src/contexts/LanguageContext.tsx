@@ -17,11 +17,11 @@ const translations = {
     
     // Hero
     "hero.badge": "Web Designer",
-    "hero.word1": "creative",
-    "hero.word2": "modern",
-    "hero.word3": "elegant",
-    "hero.word4": "innovative",
-    "hero.word5": "unique",
+    "hero.word1": "creativity",
+    "hero.word2": "modernity",
+    "hero.word3": "elegance",
+    "hero.word4": "innovation",
+    "hero.word5": "exceptionality",
     "hero.description": "Creating digital experiences that transform ideas into memorable and functional interfaces.",
     "hero.contact": "Get in touch",
     "hero.projects": "View projects",
@@ -73,11 +73,11 @@ const translations = {
     
     // Hero
     "hero.badge": "Web Designer",
-    "hero.word1": "criativo",
-    "hero.word2": "moderno",
-    "hero.word3": "elegante",
-    "hero.word4": "inovador",
-    "hero.word5": "único",
+    "hero.word1": "criatividade",
+    "hero.word2": "modernidade",
+    "hero.word3": "elegância",
+    "hero.word4": "inovação",
+    "hero.word5": "excepcionalidade",
     "hero.description": "Criando experiências digitais que transformam ideias em interfaces memoráveis e funcionais.",
     "hero.contact": "Entrar em contato",
     "hero.projects": "Ver projetos",
