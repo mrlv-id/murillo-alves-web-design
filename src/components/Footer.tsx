@@ -7,7 +7,7 @@ const Footer = () => {
   return (
     <footer className="py-8 sm:py-12 gradient-hero relative overflow-hidden border-t border-border">
       {/* Subtle grid pattern */}
-      <div className="absolute inset-0 opacity-[0.02]">
+      <div className="absolute inset-0 opacity-[0.04]">
         <div
           className="w-full h-full"
           style={{

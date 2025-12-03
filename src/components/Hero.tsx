@@ -4,7 +4,7 @@ const Hero = () => {
   return (
     <section className="gradient-hero relative overflow-hidden">
       {/* Subtle grid pattern */}
-      <div className="absolute inset-0 opacity-[0.02]">
+      <div className="absolute inset-0 opacity-[0.04]">
         <div
           className="w-full h-full"
           style={{
