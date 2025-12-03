@@ -3,6 +3,7 @@ import { useLanguage } from "@/contexts/LanguageContext";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "@/lib/utils";
+import logo from "@/assets/logo.png";
 
 const Header = () => {
   const { t } = useLanguage();
@@ -75,9 +76,9 @@ const Header = () => {
           <div className="flex items-center justify-between h-16 sm:h-20">
             <a
               href="#"
-              className="text-lg font-medium tracking-tight text-foreground hover:text-muted-foreground transition-colors duration-300"
+              className="hover:opacity-80 transition-opacity duration-300"
             >
-              MA
+              <img src={logo} alt="Murillo Alves" className="h-8 sm:h-10 w-auto dark:invert" />
             </a>
 
             <nav className="hidden md:flex items-center gap-8 lg:gap-10">
