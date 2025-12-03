@@ -52,6 +52,9 @@ const translations = {
     "projects.paw.category": "Hero Section",
     "projects.paw.description": "Hero section developed for a cat blog with warm tones and modern design.",
     "projects.paw.cta": "View project",
+    "projects.photographer.category": "Portfolio",
+    "projects.photographer.description": "Minimalist portfolio for a photographer specializing in urban and architectural photography.",
+    "projects.photographer.cta": "View project",
     "projects.coming": "More projects coming soon...",
     "projects.developing": "New work being developed",
     
@@ -111,6 +114,9 @@ const translations = {
     "projects.paw.category": "Hero Section",
     "projects.paw.description": "Hero section desenvolvida para um blog de gatos com tons quentes e design moderno.",
     "projects.paw.cta": "Ver projeto",
+    "projects.photographer.category": "Portfólio",
+    "projects.photographer.description": "Portfólio minimalista para um fotógrafo especializado em fotografia urbana e arquitetônica.",
+    "projects.photographer.cta": "Ver projeto",
     "projects.coming": "Mais projetos em breve...",
     "projects.developing": "Novos trabalhos sendo desenvolvidos",
     

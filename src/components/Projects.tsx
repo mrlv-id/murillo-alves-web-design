@@ -6,9 +6,10 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import { ArrowUpRight, Globe, Layers, Palette, Code, Cat } from "lucide-react";
+import { ArrowUpRight, Globe, Layers, Palette, Code, Cat, Camera } from "lucide-react";
 import ramosAgencyPreview from "@/assets/projects/ramos-agency-preview.png";
 import pawHeroPreview from "@/assets/projects/paw-hero-preview.png";
+import minimalPhotographerPreview from "@/assets/projects/minimal-photographer-preview.png";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 const Projects = () => {
@@ -157,6 +158,71 @@ const Projects = () => {
                         {/* CTA */}
                         <div className="flex items-center gap-2 text-xs sm:text-sm text-white font-medium">
                           <span>{t("projects.paw.cta")}</span>
+                          <ArrowUpRight className="w-3 h-3 sm:w-4 sm:h-4" />
+                        </div>
+                      </div>
+                    </div>
+                  </a>
+                </CarouselItem>
+
+                {/* Projeto Minimal Photographer */}
+                <CarouselItem className="pl-2 md:pl-4">
+                  <a
+                    href="https://minimalphotographer.vercel.app/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group block"
+                  >
+                    <div 
+                      className="relative flex flex-col rounded-md aspect-video items-center justify-center p-4 sm:p-6 transition-all border border-border hover:border-white/20 overflow-hidden group"
+                      style={{ backgroundImage: `url(${minimalPhotographerPreview})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
+                    >
+                      {/* Frosted glass overlay with grain */}
+                      <div className="absolute inset-0 bg-black/60 backdrop-blur-sm transition-all duration-500 group-hover:bg-black/20 group-hover:backdrop-blur-0" />
+                      <div 
+                        className="absolute inset-0 opacity-40 transition-opacity duration-500 group-hover:opacity-0 mix-blend-overlay"
+                        style={{ backgroundImage: 'url("data:image/svg+xml,%3Csvg viewBox=\'0 0 256 256\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cfilter id=\'noise\'%3E%3CfeTurbulence type=\'fractalNoise\' baseFrequency=\'0.8\' numOctaves=\'4\' stitchTiles=\'stitch\'/%3E%3C/filter%3E%3Crect width=\'100%25\' height=\'100%25\' filter=\'url(%23noise)\'/%3E%3C/svg%3E")' }}
+                      />
+                      
+                      {/* Content - hides on hover */}
+                      <div className="relative z-10 flex flex-col items-center transition-all duration-500 opacity-100 group-hover:opacity-0 group-hover:scale-95">
+                        {/* Header com ícone e categoria */}
+                        <div className="flex items-center gap-2 mb-2 sm:mb-3">
+                          <Camera className="w-3 h-3 sm:w-4 sm:h-4 text-white" />
+                          <span className="text-[10px] sm:text-xs uppercase tracking-widest text-white font-medium">
+                            {t("projects.photographer.category")}
+                          </span>
+                        </div>
+                        
+                        {/* Título */}
+                        <h3 className="text-lg sm:text-xl font-semibold mb-1 sm:mb-2 text-white drop-shadow-lg">
+                          Minimal Photographer
+                        </h3>
+                        
+                        {/* Descrição */}
+                        <p className="text-xs sm:text-sm text-white/90 text-center max-w-xs mb-3 sm:mb-4 drop-shadow-md line-clamp-2 sm:line-clamp-none">
+                          {t("projects.photographer.description")}
+                        </p>
+                        
+                        {/* Tech Badges */}
+                        <div className="flex flex-wrap gap-1.5 sm:gap-2 justify-center mb-3 sm:mb-4">
+                          <div className="flex items-center gap-1 px-1.5 sm:px-2 py-0.5 sm:py-1 rounded-full bg-white/20 border border-white/40 backdrop-blur-sm">
+                            <Code className="w-2.5 h-2.5 sm:w-3 sm:h-3 text-white" />
+                            <span className="text-[10px] sm:text-xs text-white font-medium">React</span>
+                          </div>
+                          <div className="flex items-center gap-1 px-1.5 sm:px-2 py-0.5 sm:py-1 rounded-full bg-white/20 border border-white/40 backdrop-blur-sm">
+                            <Palette className="w-2.5 h-2.5 sm:w-3 sm:h-3 text-white" />
+                            <span className="text-[10px] sm:text-xs text-white font-medium">Tailwind</span>
+                          </div>
+                          <div className="flex items-center gap-1 px-1.5 sm:px-2 py-0.5 sm:py-1 rounded-full bg-white/20 border border-white/40 backdrop-blur-sm">
+                            <Layers className="w-2.5 h-2.5 sm:w-3 sm:h-3 text-white" />
+                            <span className="text-[10px] sm:text-xs text-white font-medium">Vercel</span>
+                          </div>
+                        </div>
+                        
+                        {/* CTA */}
+                        <div className="flex items-center gap-2 text-xs sm:text-sm text-white font-medium">
+                          <span>{t("projects.photographer.cta")}</span>
                           <ArrowUpRight className="w-3 h-3 sm:w-4 sm:h-4" />
                         </div>
                       </div>
